@@ -10,10 +10,26 @@ from pydantic import ValidationError
 load_dotenv(dotenv_path="api_key.env")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
+ALLOWED_TOPICS = [
+    "Probability",
+    "Statistics",
+    "Linear Algebra",
+    "Vector 3D",
+    "Basic C programming",
+    "Basic Python programming",
+    "Matrix",
+    "Determinant",
+]
+
 client = AsyncOpenAI(base_url="https://api.groq.com/openai/v1", api_key=GROQ_API_KEY)
 
 
 async def generate_questions(query: QueryInput):
+    if query.topic not in ALLOWED_TOPICS:
+        return {
+            "message": f"Topic '{query.topic}' is not allowed.",
+            "allowed_topics": ALLOWED_TOPICS,
+        }
     context_results = await search_tavily(query.topic)
     context_text = "\n".join([item["content"] for item in context_results])
 
