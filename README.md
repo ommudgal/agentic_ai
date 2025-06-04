@@ -13,7 +13,7 @@ Agentic AI is a project focused on building autonomous, agent-based Question Gen
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/agentic_ai.git
+    git clone https://github.com/https://github.com/Mohdkaif05/agentic_ai
     cd agentic_ai
     ```
 
