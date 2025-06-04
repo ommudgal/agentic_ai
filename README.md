@@ -1,6 +1,6 @@
 # Agentic AI
 
-Agentic AI is a project focused on building autonomous, agent-based artificial intelligence systems. The goal is to create modular, extensible agents capable of reasoning, planning, and executing complex tasks.
+Agentic AI is a project focused on building autonomous, agent-based Question Generator.
 
 ## Features
 
